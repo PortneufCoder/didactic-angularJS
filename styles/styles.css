@@ -11,3 +11,8 @@
     font-weight: bold;
     text-align: center;
 }
+
+.currentdate {
+    /* margin-top: 10px; */
+    float: right;
+}

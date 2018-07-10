@@ -1,0 +1,7 @@
+input.ng-dirty.ng-valid {
+    background-color:green;
+}
+
+theModel {
+    margin-top: 30px;
+}

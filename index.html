@@ -10,14 +10,25 @@
     <script type="text/javascript" src="controllers/mycontroller.js"></script>
     <script type="text/javascript" src="controllers/displayFilter.js"></script>
     <script type="text/javascript" src="controllers/customFilter.js"></script>
+     <script type="text/javascript" src="controllers/builtInFilter.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/styles.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
-    <!--These above three files are the basic requirements for an angularjs app-->
+    <!--These above three files(app.js, controllers folder and angular.min.js) are the basic requirements to get started with an angularjs app-->
     <title>Angular App</title>
 </head>
 
 <body>
+    <div>
+        <h2><a href="templates/form.html">Go to registration page</a></h2>
+        
+    </div>
+    <div ng-controller="date" class="currentdate">
+        <p>
+            Current Date: {{ theDate | date: 'longDate' }}
+        </p>
+
+    </div>
     <div  class="name" ng-controller="appController">
         <p>{{firstName}}</p>
         <!--The controller brings in the dynamic output from the mycontrollerjs file-->
@@ -39,7 +50,7 @@
             <input type="text" ng-model="numberData.value2" />
         </div>
 
-        <button ng-click=divide(numberData.value1,numberData.value2)>
+        <button class="btn" ng-click=divide(numberData.value1,numberData.value2)>
             <!-- ng-click is an angular directive that fires a function once the button is clicked-->
             Calculate {{ numberData.value1 }} * {{ numberData.value2 }}
         </button>
@@ -101,17 +112,28 @@
                 <li>The price is: {{ stuff.dollarPrice | currency }}</li>
 
                 <!-- The method after the | is a directive to angular like a regular vanilla js
-                method to manipulate the data in a certain way. In the first, the data will be outputted in uppercase etc-->
+                method to manipulate the data in a certain way. In the first, the data will be outputted in uppercase etc -->
 
             </ul>
         </section>
+        <!--Creating custom filters-->
         <div ng-controller="customFilterController">
             <h3> {{ description }}</h3>
 
             <ul ng-repeat="fruit in specialsList">
+                <!-- The ng-repeat directive, is basically like a js loop that iterates over the objects and does what you want with each one. Again the data after the pipe  is referencing my controller function. You can use a js method or even call a function! -->
                 <li> Type: {{ fruit.species | dashes }}</li>
                 <li> Type: {{ fruit.originCountry | addBold }}</li>
 
+            </ul>
+
+        </div>
+        <!--Using orderBy and limitTo filters-->
+
+        <div ng-controller="filters">
+            <ul ng-repeat="nation in countryInfo | orderBy: 'capital'">
+                <strong><em>Country: </em></strong>{{ nation.capital }}, {{ nation.name }}  <br>
+                <strong>Population: {{ nation.population }}</strong>
             </ul>
 
         </div>

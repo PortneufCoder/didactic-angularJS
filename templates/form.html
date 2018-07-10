@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="../angular.min.js"></script>
+    <script type="text/javascript" src="../app.js"></script>
+    <script type="text/javascript" src="../controllers/formController.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../styles/form.css" />
+    
+    <title>Form validation section</title>
+</head>
+<body>
+  <div ng-controller="formCtrl">
+      <!--novalidate is a HTML attribute that turns off any automatic HTML validation mechanism and thus avoid a conflict -->
+        <form name= "myForm" novalidate>
+                Register your first name: <input ng-model="model.firstName" required /> <br />
+                Register your last name: <input ng-model="model.lastName"  required  /> <br>
+                Register your contact number: <input ng-model="model.contact"  required ng-minlength="4" /> <br>
+                Register your contact email: <input ng-model="model.email" type="email"  required  /> <br>
+                Register your postal code: <input ng-model="model.postalCode"  required ng-pattern="/[A-Z]\d[A-Z] \d[A-Z]\d/"  /> <br>
+                <!--This regular expression ensures that whatever postal code is entered must match a valid Canadian PC-->
+                <button ng-click="submitForm(myForm)" class="btn btn-primary"> Submit </button>
+                <button class="btn btn-dark" ng-click="/index.html">Thanks for Registering!</button>
+            
+    
+            </form>
+
+            <div class="theModel">{{ model }}</div>
+
+  </div>
+</body>
+</html>

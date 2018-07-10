@@ -26,3 +26,9 @@ customFilter.filter('addBold', function() {
         return embolden;
     }
 })
+
+customFilter.controller('date', function($scope) {
+
+    $scope.theDate = Date.now();
+    
+})

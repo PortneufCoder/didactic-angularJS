@@ -22,11 +22,10 @@ angular.controller("DivideCtrl", function($scope) {
     value2: ""
   };
 
-  $scope.divide = (val1, val2) => {
+  $scope.divide = function (val1, val2) {
     window.alert(val1 * val2);
-    if (numberData.value1 * numberData.value2 === NaN) {
-      alert(`Please enter actual numbers`);
-    }
+    $scope.divide = '';
+   
   };
 });
 
