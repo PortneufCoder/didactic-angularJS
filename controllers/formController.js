@@ -11,4 +11,8 @@ formController.controller('formCtrl', function($scope) {
             window.alert('Failed validation! 🌞');
         }
     }
+
+    $scope.switchBack = function () {
+        return window.location.href = "../index.html"
+    }
 })
