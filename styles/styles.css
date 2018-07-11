@@ -1,6 +1,13 @@
-/* html {
-    background-color: blanchedalmond;
-} */
+body {
+    background-image: url("../images/dribble_99.gif");
+}
+
+
+.login {
+    text-align: center;
+    margin-top: 15px;
+    
+}
 
 .sharedStuff  {
     font-weight: bold;
@@ -15,4 +22,18 @@
 .currentdate {
     /* margin-top: 10px; */
     float: right;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-flow:  row wrap;
+    height: 100%;
+    margin-top: 30px;
+    
+}
+
+.row {
+    border: 1px solid #356cc1
 }

@@ -16,11 +16,11 @@
   <div ng-controller="formCtrl">
       <!--novalidate is a HTML attribute that turns off any automatic HTML validation mechanism and thus avoid a conflict -->
         <form name= "myForm" novalidate>
-                Register your first name: <input ng-model="model.firstName" required /> <br />
-                Register your last name: <input ng-model="model.lastName"  required  /> <br>
-                Register your contact number: <input ng-model="model.contact"  required ng-minlength="4" /> <br>
-                Register your contact email: <input ng-model="model.email" type="email"  required  /> <br>
-                Register your postal code: <input ng-model="model.postalCode"  required ng-pattern="/[A-Z]\d[A-Z] \d[A-Z]\d/"  /> <br>
+                First name: <input ng-model="model.firstName" required /> <br>
+                last name: <input ng-model="model.lastName"  required  /> <br>
+                Contact number: <input ng-model="model.contact"  required ng-minlength="4" /> <br>
+                Contact email: <input ng-model="model.email" type="email"  required  /> <br>
+                Postal code: <input ng-model="model.postalCode"  required ng-pattern="/[A-Z]\d[A-Z] \d[A-Z]\d/"  /> <br>
                 <!--This regular expression ensures that whatever postal code is entered must match a valid Canadian PC-->
                 <button ng-click="submitForm(myForm)" class="btn btn-primary"> Submit </button>
                 <button ng-click="switchBack()"  class="btn btn-dark" value="Submit">Thanks for Registering!</button>
