@@ -47,5 +47,8 @@ customFilter.controller('grocery', function($scope) {
     ]
 
     $scope.selectedFoodGroup = "";
-    
+
+    //$scope.$watch can be used in angular to monitor a variable for changes and
+    //then apply a certain condition.
+    //Finally in the HTML, you would call ng-model and assign the value of your variable
 })

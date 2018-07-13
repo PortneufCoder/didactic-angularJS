@@ -8,6 +8,7 @@
     <script type="text/javascript" src="angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="controllers/mycontroller.js"></script>
+    <script type="text/javascript" src="controllers/promises.js"></script>
     <script type="text/javascript" src="controllers/displayFilter.js"></script>
     <script type="text/javascript" src="controllers/customFilter.js"></script>
     <script type="text/javascript" src="controllers/builtInFilter.js"></script>
@@ -35,6 +36,14 @@
             <a href="templates/form.html">Login</a>
         </h3>
 
+    </div>
+    <div ng-controller="greetingCtrl">
+        <ul ng-repeat="greeting in fullGreetings">
+            {{ greeting }}
+        </ul>
+    </div>
+    <div ng-controller="promiseCtrl">
+        {{ africa }} {{ europe }} {{ asia }}
     </div>
     <div ng-controller="date" class="currentdate">
         <p>
@@ -81,6 +90,7 @@
 
         </div>
 
+        <!--Testing angular filtering-->
         <div ng-controller="grocery">
             <div>
                 <p>Filter by Type</p>

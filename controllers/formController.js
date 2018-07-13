@@ -13,6 +13,6 @@ formController.controller('formCtrl', function($scope) {
     }
 
     $scope.switchBack = function () {
-        return window.location.href = "../index.html"
+        return window.location.href = "../index.html";
     }
 })

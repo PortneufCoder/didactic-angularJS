@@ -1,10 +1,10 @@
-// controllers in angular determine where dynamic content is created.
+// controllers in thisController determine where dynamic content is created.
 //in the index.html, you can then call that controller on an element,
 //and it will be operational only within the $scope of that element.
-// const myApp = angular.module('myApp', []);
-const angular = myApp;
+// const myApp = thisController.module('myApp', []);
+const thisController = myApp;
 
-angular.controller("appController", function($scope) {
+thisController.controller("appController", function($scope) {
   $scope.firstName = "";
   $scope.lastName = "";
   //onClick, this function sets the name variable which is defined in the HTML
@@ -14,8 +14,8 @@ angular.controller("appController", function($scope) {
   };
 });
 
-angular.controller("DivideCtrl", function($scope) {
-  // angular does not accept ES6 arrow functions
+thisController.controller("DivideCtrl", function($scope) {
+  // thisController does not accept ES6 arrow functions
   // whatever comes after $scope is just a method we invent
   $scope.numberData = {
     value1: "",
@@ -29,16 +29,16 @@ angular.controller("DivideCtrl", function($scope) {
   };
 });
 
-angular.controller("OuterCtrl", function($scope) {
+thisController.controller("OuterCtrl", function($scope) {
   //   $scope.val3 = `Scott`;
   $scope.val3 = {
     name: `Scott`
   };
 });
 
-angular.controller("InnerCtrl", function($scope) {});
+thisController.controller("InnerCtrl", function($scope) {});
 
-angular.controller("CarCtrl", function($scope) {
+thisController.controller("CarCtrl", function($scope) {
   $scope.cars = {
     BMW: { Make: "BMW", Model: "1 Series", Year: "2010" },
     Audi: { Make: "Audi", Model: "TT", Year: "2008" },
@@ -51,25 +51,25 @@ angular.controller("CarCtrl", function($scope) {
 //We use this factory method to share data between controllers.
 // The two controllers below will then have access to the same data I'm returning 
 //Within the factory function.
-angular.factory('Share', function() {
+thisController.factory('Share', function() {
     return {sharedMessage: `I am being shared`}
 })
 
 
-angular.controller("controllerA", function ($scope, Share) {
+thisController.controller("controllerA", function ($scope, Share) {
   $scope.value = `Saying hi from controller A`;
   $scope.sharedValue = Share;
 });
 
-angular.controller("controllerB", function ($scope, Share) {
+thisController.controller("controllerB", function ($scope, Share) {
   $scope.value = `Hello from controller B`;
   $scope.sharedValue = Share;
 });
 
-angular.controller(`myCtrl`, function ($scope){
+thisController.controller(`myCtrl`, function ($scope){
     $scope.value = "One way to pass values from controllers"
 })
 
-angular.controller(`realCtrl`, function (){
+thisController.controller(`realCtrl`, function (){
     this.value = "Cool way to pass values from controllers"
 })
