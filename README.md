@@ -9,7 +9,7 @@ This is a little Web app I'm constructing while trying to grasp the key features
 - Sharing data between Controllers
 - Controller 'as' syntax
 - Display Filters
-- Uer Input and Input validation
+- User Input and Input validation
 - Partial Templates
 - Form Validation
 - $scope.$watch
