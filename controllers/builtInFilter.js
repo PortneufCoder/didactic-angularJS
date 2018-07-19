@@ -35,13 +35,12 @@ builtInFilter.controller("filters", function($scope) {
       population: 357186
     }
   ];
-  console.log($scope.countryInfo);
-  $scope.getCapital = function() {
-    for (let i = 0; i < countryInfo.length; i++) {
-      console.log(countryInfo[i].capital);
-      return $scope.countryInfo[i].capital.charAt(0).toLowercase();
-    }
-  };
+  
+//   for ( let countryInfo of $scope.countryInfoGroup.name ) {
+//     countryInfo = countryInfo.name.substr(0, 1).toLowerCase() + countryInfo.substr(1)
+//     console.log(countryInfo)
+//   }
+
 });
 
 // Practising angular.forEach function
@@ -49,7 +48,7 @@ builtInFilter.controller("greetingCtrl", function($scope) {
   // We want to grab one greeting and one name to present to a user using the forEach method
   let greetings = ["Hi", "Whats the craic,", "Hows it going,"];
   let names = ["Ivan", "Clayton", "Leo"];
-  console.log(typeof greetings);
+  angular.isArray(names) ? console.log(true) : console.log(false)
 
   $scope.fullGreetings = [];
   //A forEach funtion takes each element in the array and performs an action on it
@@ -61,22 +60,15 @@ builtInFilter.controller("greetingCtrl", function($scope) {
   });
 });
 
-builtInFilter.filter("lower", function() {
-  let oneInstance = countryInfo.capital;
-  return function() {
-    for (let i = 0; i < countryInfo.length; i++) {
-      if (countryInfo[i].capital === countryInfo.capital) {
-        console.log(countryInfo.capital[i]);
-        countryInfo[i].capital[0] = countryInfo[i].capital
-          .charAt(0)
-          .toLowercase();
-      }
+builtInFilter.controller("lower", function() {
+  let countryInfo;
+    for(let i=0; i < countryInfo.length; i++) {
+        console.log(countryInfo)
     }
-  };
+})
 
-  //  return for(let i=0; i < countryInfo.length; i++){
-  //     if(countryInfo[i].indexOf(0)){
-  //         return countryInfo[i].toLowerCase;
-  //     }
-  // }
-});
+let victor = `I am going home`;
+console.log(victor)
+
+let updated = victor.replace('home', 'into town')
+console.log(updated)

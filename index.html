@@ -12,6 +12,7 @@
     <script type="text/javascript" src="controllers/displayFilter.js"></script>
     <script type="text/javascript" src="controllers/customFilter.js"></script>
     <script type="text/javascript" src="controllers/builtInFilter.js"></script>
+    <script src="anime-master/anime.min.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/styles.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
@@ -24,6 +25,8 @@
         ul {
             list-style-type: none
         }
+
+        
     </style>
 
     <!--These above three files(app.js, controllers folder and angular.min.js) are the basic requirements to get started with an angularjs app-->
@@ -31,6 +34,7 @@
 </head>
 
 <body>
+
     <div>
         <h3 class="login">
             <a href="templates/form.html">Login</a>
@@ -176,7 +180,7 @@
             <ul ng-repeat="fruit in specialsList">
                 <!-- The ng-repeat directive, is basically like a js loop that iterates over the objects and does what you want with each one. Again the data after the pipe  is referencing my controller function. You can use a js method or even call a function! -->
                 <li> Type: {{ fruit.species | dashes }}</li>
-                <li> Type: {{ fruit.originCountry | addBold }}</li>
+                <li> Country: {{ fruit.originCountry | addBold }}</li>
 
             </ul>
 
